@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
+    <!-- Shared Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syakir<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Syakir</span></h1>
+            <p>Full-Stack Software Developer & Computer Science Graduate</p>
+            <a href="about.html" class="btn">Learn More About Me</a>
+        </div>
+    </section>
+
+    <!-- Short Featured Projects Section -->
+    <section class="content-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>UniVent System</h3>
+                    <p>A centralized university event management platform featuring an organizer-initiated booking process and a rule-based decision support system.</p>
+                    <div class="tags"><span>PHP</span><span>CodeIgniter</span><span>Bootstrap 5</span></div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Infrastructure Monitor</h3>
+                    <p>Automated system infrastructure monitoring featuring CPU/Memory stress testing with integrated Prometheus & Grafana alerting.</p>
+                    <div class="tags"><span>Prometheus</span><span>Grafana</span><span>Linux</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Syakir. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
