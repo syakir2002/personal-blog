@@ -1,1 +1,55 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | My E-Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syakir<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="content-section main-page-padding">
+        <h2 class="section-title">My Blog</h2>
+        <div class="blog-container">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+                <span class="blog-date">May 15, 2026</span>
+                <h3><a href="#">Demystifying Distributed Systems and Cloud Architecture</a></h3>
+                <p>An introductory dive into how modern scalable architectures handle high availability, load balancing, and data consistency across nodes...</p>
+                <a href="#" class="read-more">Read More &rarr;</a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+                <span class="blog-date">April 28, 2026</span>
+                <h3><a href="#">Best Practices for Building MVC Web Apps in PHP</a></h3>
+                <p>A breakdown of organizing your controller logic, clean routing mechanisms, and ensuring secure input validation utilizing modern PHP frameworks...</p>
+                <a href="#" class="read-more">Read More &rarr;</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Syakir. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
