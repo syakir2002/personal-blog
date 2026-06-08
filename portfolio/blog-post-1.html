@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building UniVent DSS | Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syakir<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <article class="content-section main-page-padding raw-post-layout">
+        <div class="post-meta-header">
+            <a href="blog.html" class="back-link">&larr; Back to Blog List</a>
+            <span class="blog-date" style="margin-top: 15px;">Published: june 6, 2026</span>
+            <h1>How I Built a Rule-Based Decision Support System for My FYP (UniVent System)</h1>
+        </div>
+
+        <div class="post-body-text">
+            <p>For my university Final Year Project (FYP), I wanted to tackle a problem every student organization faces: the slow, fragmented process of booking campus venues and managing student events. My solution was the <strong>UniVent System</strong>, a centralized platform built using PHP (CodeIgniter) and Bootstrap 5. However, the core heart of this system wasn't just data entry—it was its <strong>Decision Support System (DSS)</strong>.</p>
+            
+            <h3>The Problem: Administrative Overload</h3>
+            <p>Traditionally, when an event organizer submits a venue booking request, administrators must manually look over rules: Is the venue available? Does this event match the venue capacity rules? Does the organizing club have the appropriate clearance? This manual review causes massive delays.</p>
+
+            <h3>The Solution: Mapping Out the Rules</h3>
+            <p>To eliminate this bottleneck, I structured a rule-based pipeline where the organizer initiates a booking, and the backend automatically evaluates constraints before pushing it to administrators for absolute final approval. The core system functions on deterministic IF-THEN computational pathways:</p>
+            
+            <blockquote class="code-concept-quote">
+                <strong>IF</strong> Venue_Status == Available <br>
+                <strong>AND</strong> Event_Expected_Attendance &lt;= Venue_Max_Capacity <br>
+                <strong>AND</strong> Clash_Detected == False <br>
+                <strong>THEN</strong> Set Request_Status = "Auto-Validated; Pending Admin Approval"
+            </blockquote>
+
+            <h3>The Outcome</h3>
+            <p>By enforcing this rule-based filtering framework at the data entry point, the system instantly catches conflicting duplicate requests. It shifted the administrator's role from manual cross-referencing to a simple one-click verification system, drastically improving efficiency on campus.</p>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Syakir. All rights reserved.</p>
+    </footer>
+
+    <script src="js/javascript.js"></script>
+</body>
+</html>

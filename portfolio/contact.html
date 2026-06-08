@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | My E-Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syakir<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="content-section main-page-padding">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="text-align: center; color: var(--grey-text); margin-bottom: 30px;">Have a question or want to work together? Drop a message below!</p>
+        
+        <form id="contactForm" class="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <hr class="contact-divider">
+
+        <div class="contact-links-stack">
+            
+            <div class="email-display-container">
+                <i class="fas fa-envelope email-icon"></i>
+                <a href="mailto:msyakirkir887@gmail.com" class="direct-email">msyakirkir887@gmail.com</a>
+            </div>
+            
+            <div class="whatsapp-container">
+                <a href="https://wa.me/60123456789?text=Hi%20Syakir,%20I%20saw%20your%20portfolio..." target="_blank" class="btn-contact-action btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+
+            <div class="github-container">
+                <a href="https://github.com/syakir2002" target="_blank" class="btn-contact-action btn-github">
+                    <i class="fab fa-github"></i> View My GitHub Profile
+                </a>
+            </div>
+
+        </div> </section>
+
+    <footer>
+        <p>&copy; 2026 Syakir. All rights reserved.</p>
+    </footer>
+
+    <script src="js/javascript.js"></script>
+</body>
+</html>

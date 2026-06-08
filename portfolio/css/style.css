@@ -1,0 +1,904 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #00adb5;
+    --dark-bg: #222831;
+    --light-dark: #393e46;
+    --light-text: #eeeeee;
+    --grey-text: #b3b3b3;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Sections */
+.content-section {
+    padding: 60px 10%;
+    flex: 1;
+}
+
+.main-page-padding {
+    padding-top: 120px; /* Prevents text cutting off under fixed navbar */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--light-dark);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    color: var(--light-text);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(34, 40, 49, 0.85), rgba(34, 40, 49, 0.95)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-content .highlight {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--grey-text);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #008c95;
+    transform: translateY(-2px);
+}
+
+/* About Layout */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--grey-text);
+}
+
+.about-container p {
+    margin-bottom: 20px;
+}
+
+/* Skills Layout */
+.skills-grid, .projects-grid {
+    display: grid;
+    /* auto-fit automatically handles columns, dropping them down if space is tight */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.skill-card, .project-card {
+    background-color: var(--light-dark);
+    padding: 25px 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-card { text-align: center; }
+.skill-card:hover, .project-card:hover { transform: translateY(-5px); }
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.project-info h3 { margin-bottom: 10px; }
+.project-info p { color: var(--grey-text); font-size: 0.95rem; margin-bottom: 20px; }
+
+.tags span {
+    background-color: var(--dark-bg);
+    color: var(--primary-color);
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* Blog Layout */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    background-color: var(--light-dark);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.blog-date {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.blog-post h3 a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.blog-post h3 a:hover { color: var(--primary-color); }
+.blog-post p { color: var(--grey-text); margin: 12px 0; }
+.blog-more, .read-more { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+
+/* Contact Layout */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--light-dark);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: #1a1e24;
+    text-align: center;
+    padding: 20px;
+    color: var(--grey-text);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 73px;
+        left: 0;
+        background-color: var(--light-dark);
+        border-top: 1px solid var(--dark-bg);
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { text-align: center; padding: 15px 0; }
+    .menu-toggle { display: block; }
+    .hero-content h1 { font-size: 2.5rem; }
+}
+
+/* --- Vertical Project Sidebar Layout --- */
+.projects-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--light-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar Styling */
+.projects-sidebar {
+    width: 300px;
+    background-color: #2d3238; /* Slightly darker than main card container */
+    border-right: 1px solid #454d57;
+}
+
+.project-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    padding: 18px 20px;
+    color: var(--light-text);
+    cursor: pointer;
+    border-bottom: 1px dashed #454d57;
+    font-size: 1.05rem;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item .arrow {
+    color: var(--grey-text);
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+/* Hover and Active Menu States */
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.menu-item.active {
+    background-color: var(--light-dark); /* Matches right description area bg */
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.menu-item.active .arrow {
+    color: var(--primary-color);
+}
+
+/* Right Display Panel Area */
+.projects-display {
+    flex: 1;
+    padding: 40px;
+    min-height: 350px;
+}
+
+.project-panel {
+    display: none; /* Hide all panels by default */
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.project-panel.active {
+    display: block; /* Show the active panel layout */
+}
+
+.project-panel h3 {
+    font-size: 2rem;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.project-desc {
+    color: var(--grey-text);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+
+/* Direct Email Display Styles */
+.email-display-container {
+    text-align: center;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--light-dark);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    border-radius: 5px;
+        border: 1px dashed rgba(0, 173, 181, 0.4);
+    }
+
+    .project-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 20px 0;
+}
+
+.metric {
+    background: rgba(255,255,255,0.05);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.email-display-container .email-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.direct-email {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.direct-email:hover {
+    color: var(--primary-color);
+}
+/* Simple animation when switching projects */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments for phones */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+    }
+    .projects-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #454d57;
+    }
+    .projects-display {
+        padding: 25px;
+    }
+}
+/* --- Full Article Post Styling --- */
+.raw-post-layout {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;  /* Reduces aggressive side squeezing */
+    padding-right: 20px; /* Reduces aggressive side squeezing */
+}
+
+.post-meta-header h1 {
+    font-size: 2.5rem;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    color: var(--light-text);
+}
+
+.back-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.back-link:hover {
+    transform: translateX(-4px);
+}
+
+.post-body-text p {
+    font-size: 1.1rem;
+    color: var(--grey-text);
+    margin-bottom: 22px;
+    line-height: 1.8;
+}
+
+.post-body-text h3 {
+    font-size: 1.6rem;
+    color: var(--light-text);
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+/* Logical Rule Blockquote highlight box */
+.code-concept-quote {
+    background-color: var(--light-dark);
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 0 6px 6px 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* --- Side-by-Side About Layout --- */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Left Side Image Frame */
+.about-image-wrapper {
+    flex-shrink: 0; /* Prevents the browser from squeezing your photo */
+}
+
+.profile-photo {
+    width: 280px;
+    height: 280px;
+    object-fit: cover; /* Ensures your picture doesn't warp or stretch */
+    border-radius: 12px; /* Smooth rounded corners */
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Right Side Bio Text */
+.about-text-wrapper {
+    flex: 1;
+    text-align: left; /* Clean left-aligned readability */
+    font-size: 1.1rem;
+    color: var(--grey-text);
+}
+
+.about-text-wrapper p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Responsive Mobile Handling */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stacks image on top, text on bottom for mobile */
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .about-text-wrapper {
+        text-align: center; /* Centers paragraphs beautifully on phone screens */
+    }
+    
+    .profile-photo {
+        width: 220px;
+        height: 220px; /* Scales down slightly for mobile viewports */
+    }
+}
+
+/* --- Journey Timeline Styles --- */
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* The vertical connecting center line track */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--light-dark);
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Aligns left for clean mobile-first reading */
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* The tracking point dots */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border: 3px solid var(--dark-bg);
+    border-radius: 50%;
+    left: 20px;
+    top: 5px;
+    margin-left: -8px;
+    z-index: 2;
+}
+
+.timeline-date {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.timeline-content {
+    background-color: var(--light-dark);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.school-name {
+    color: #fff;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.timeline-desc {
+    color: var(--grey-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Desktop layout shifting adjustments */
+@media (min-width: 768px) {
+    .timeline-container::after {
+        left: 50%; /* Center the line track on monitors */
+    }
+    
+    .timeline-item {
+        width: 50%;
+        padding-left: 0;
+    }
+    
+    /* Alternates layout rows (Left side items) */
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-right: 40px;
+        text-align: right;
+    }
+    
+    /* Alternates layout rows (Right side items) */
+    .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 40px;
+        text-align: left;
+    }
+    
+    .timeline-dot {
+        left: 50%; /* Anchor points center perfectly */
+    }
+}
+
+/* --- Fullscreen Layout Rules --- */
+.fullscreen-section {
+    min-height: 100vh; /* Forces each section to take exactly 1 full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers elements vertically inside the screen block */
+    padding: 80px 10%;
+    box-sizing: border-box;
+}
+
+/* Fix timeline dot positioning alignment for desktop zigzag views */
+@media (min-width: 768px) {
+    .timeline-container::after {
+        left: 50% !important;
+    }
+    .timeline-dot {
+        left: 50% !important;
+        transform: translateX(-50%); /* Keeps dots dead-centered on the vertical track line */
+        margin-left: 0 !important;
+    }
+}
+
+/* --- Split Sidebar Layout Styling --- */
+.about-page-layout {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Sidebar Position Control */
+.about-sidebar {
+    width: 220px;
+    position: sticky;
+    top: 140px; /* Positions menu cleanly under your main top header navigation bar */
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.sub-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-left: 2px solid var(--light-dark);
+    padding-left: 15px;
+}
+
+.sub-link {
+    color: var(--grey-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sub-link:hover, .sub-link.active {
+    color: var(--primary-color);
+    transform: translateX(3px);
+}
+
+.about-main-content {
+    flex: 1;
+}
+
+/* Left aligns the header for the split design */
+.text-left {
+    text-align: left !important;
+}
+.text-left::after {
+    margin: 10px 0 0 0 !important; /* Forces layout bars to underline left instead of center */
+}
+
+/* Hide sidebar menu entirely on mobile screens so content doesn't squeeze */
+@media (max-width: 992px) {
+    .about-page-layout {
+        flex-direction: column;
+    }
+    .about-sidebar {
+        display: none;
+    }
+    .text-left {
+        text-align: center !important;
+    }
+    .text-left::after {
+        margin: 10px auto 0 auto !important;
+    }
+}
+
+html {
+    scroll-behavior: smooth; /* Gives you that silky glide motion when links are clicked */
+}
+
+/* Base Wrapper Adjustments */
+.about-page-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Sidebar Position Control - Centered Vertically */
+.about-sidebar {
+    width: 250px;
+    position: sticky;
+    top: 0; /* Changed to 0 so it can center based on full screen viewport height */
+    height: 100vh; /* Takes full height of screen to calculate middle point */
+    flex-shrink: 0;
+    
+    /* Center the menu elements inside this invisible sidebar box */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.about-main-content {
+    flex: 1;
+    width: 100%;
+}
+
+.fullscreen-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0; /* Clear space around elements */
+    box-sizing: border-box;
+}
+
+/* CGPA Layout Indicator Highlight */
+.cgpa-badge {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light-text);
+    margin-bottom: 12px;
+    display: inline-block;
+    background-color: rgba(0, 173, 181, 0.15); /* Light translucent primary theme tint */
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 173, 181, 0.3);
+}
+
+.cgpa-badge span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* --- REMOVED THE ROW-REVERSE BUG --- */
+/* This safely ensures that even when the card contents align to the right side, the badge text reads normally left-to-right */
+.timeline-item:nth-child(odd) .cgpa-badge {
+    display: inline-block; 
+}
+
+/* --- Contact Stack & Action Buttons Styles --- */
+.contact-links-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Adds uniform spacing between each link item */
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Ensure the email container matches the box layout width perfectly */
+.email-display-container {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--light-dark);
+    padding: 14px;
+    border-radius: 5px;
+    border: 1px dashed rgba(0, 173, 181, 0.4);
+    margin: 0 !important; /* Resets old manual margins */
+}
+
+/* Universal Button Layout Rule for Contact Stack */
+.btn-contact-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 400px; /* Forces exact identical size match with email box */
+    max-width: 100%;
+    padding: 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* WhatsApp Green Styling */
+.btn-whatsapp {
+    background-color: #25D366;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+}
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* GitHub Dark Charcoal Styling */
+.btn-github {
+    background-color: #24292e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.btn-github:hover {
+    background-color: #2f363d;
+    color: var(--primary-color); /* Turns icon text primary blue on hover state */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* Ensure responsiveness on narrow mobile phone screens */
+@media (max-width: 450px) {
+    .contact-links-stack, .btn-contact-action {
+        width: 100%;
+    }
+}
+
+/* Decorative contact page separator */
+.contact-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 173, 181, 0.3), transparent);
+    margin: 40px auto;
+    width: 80%;
+    max-width: 500px;
+}

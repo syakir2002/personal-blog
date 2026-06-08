@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | My E-Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syakir<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="content-section main-page-padding">
+        <h2 class="section-title">Past Projects</h2>
+        
+        <div class="projects-container">
+            <aside class="projects-sidebar">
+                <ul class="project-menu">
+                    <li class="menu-item active" onclick="showProject('univend')">
+                        <span class="arrow">&raquo;</span> UniVent System
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="projects-display">
+                
+                <div id="univend" class="project-panel active">
+                    <h3>UniVent System(On Going)</h3>
+
+                    <p class="project-desc">
+                        UniVent System is a university event management platform developed as my Final Year Project (FYP) to improve how students discover and engage with campus events. The system provides a centralized platform where students can easily browse upcoming events, view event details, and leave comments through a mobile application developed using Flutter. In addition, administrators can manage event information and monitor user interactions through a web-based system built with CodeIgniter 4 and Bootstrap 5. This project allowed me to gain experience in full-stack development, REST API integration, database management, and user interface design while creating a practical solution that enhances communication and participation within the university community.
+                    </p>
+
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <strong>Role:</strong> Full Stack Developer
+                        </div>
+
+                        <div class="metric">
+                            <strong>Duration:</strong> 2025 - 2026
+                        </div>
+
+                        <div class="metric">
+                            <strong>Platform:</strong> Mobile & Web
+                        </div>
+
+                        <div class="metric">
+                            <strong>Team Size:</strong> 1 Person
+                        </div>
+                    </div>
+
+                    <div class="tags">
+                        <span>PHP</span>
+                        <span>CodeIgniter</span>
+                        <span>Bootstrap 5</span>
+                        <span>Flutter</span>
+                        <span>RESTful API</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                
+                <div id="rentalhouse" class="project-panel">
+                    <h3>Rental House System</h3>
+
+                    <p class="project-desc">
+                        Rental House System is a web-based property management platform developed to simplify the process of managing rental houses for both property owners and tenants. The system enables users to browse available rental properties, view detailed house information, and submit rental inquiries through a user-friendly interface. Property owners can manage property listings, update rental information, and monitor tenant requests efficiently through an administrative dashboard. Developed using CodeIgniter 4, Bootstrap 5, and MySQL, this project enhanced my skills in full-stack web development, database management, user authentication, and responsive user interface design while providing a practical solution for rental property management.
+                    </p>
+
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <strong>Role:</strong> Full Stack Developer
+                        </div>
+
+                        <div class="metric">
+                            <strong>Duration:</strong> 2025
+                        </div>
+
+                        <div class="metric">
+                            <strong>Platform:</strong> Web Application
+                        </div>
+
+                        <div class="metric">
+                            <strong>Team Size:</strong> 1 Person
+                        </div>
+
+                        <div class="metric">
+                            <strong>Status:</strong> Completed
+                        </div>
+                    </div>
+
+                    <div class="tags">
+                        <span>PHP</span>
+                        <span>CodeIgniter 4</span>
+                        <span>Bootstrap 5</span>
+                        <span>MySQL</span>
+                        <span>MVC Architecture</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </div>
+
+                <div id="infra" class="project-panel">
+                    <h3>Infrastructure Monitor</h3>
+
+                    <p class="project-desc">
+                        Infrastructure Monitor is a system monitoring project designed to track server performance and detect potential resource issues in real time. The project utilizes Prometheus for metrics collection and Grafana for data visualization, enabling administrators to monitor CPU usage, memory consumption, and overall system health through interactive dashboards. To evaluate monitoring effectiveness, CPU and memory stress tests were performed under different workload conditions, while automated email alerts were configured to notify administrators whenever predefined resource thresholds were exceeded. This project enhanced my understanding of Linux system administration, performance monitoring, alert management, and infrastructure reliability.
+                    </p>
+
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <strong>Role:</strong> System Administrator
+                        </div>
+
+                        <div class="metric">
+                            <strong>Duration:</strong> 2025
+                        </div>
+
+                        <div class="metric">
+                            <strong>Platform:</strong> Linux Server
+                        </div>
+
+                        <div class="metric">
+                            <strong>Team Size:</strong> 1 Person
+                        </div>
+
+                        <div class="metric">
+                            <strong>Status:</strong> Completed
+                        </div>
+                    </div>
+
+                    <div class="tags">
+                        <span>Prometheus</span>
+                        <span>Grafana</span>
+                        <span>Linux</span>
+                        <span>Monitoring</span>
+                        <span>Alerting</span>
+                        <span>DevOps</span>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Syakir. All rights reserved.</p>
+    </footer>
+
+    <script src="js/javascript.js"></script>
+</body>
+</html>
