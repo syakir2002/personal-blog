@@ -80,7 +80,14 @@ portfolio/
 │   └── img7.jpg
 │   └── img8.jpg
 │   └── img9.jpg
-│   └── img10.jpg
+│   └── img10.jpg│
+│
+├── readme/
+│   └── home.png
+│   └── about_me.png
+│   └── project.png
+│   └── blog.png
+│   └── contact.png
 │
 ├── index.html
 ├── about.html
