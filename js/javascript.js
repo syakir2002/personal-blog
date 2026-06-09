@@ -72,3 +72,26 @@ window.addEventListener('scroll', () => {
     });
 });
 
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = themeToggle.querySelector('i');
+
+// Check for saved user preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        // Toggle event
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+                
+                    if (body.classList.contains('light-mode')) {
+                            localStorage.setItem('theme', 'light');
+                                    icon.classList.replace('fa-moon', 'fa-sun');
+                                        } else {
+                                                localStorage.setItem('theme', 'dark');
+                                                        icon.classList.replace('fa-sun', 'fa-moon');
+                                                            }
+                                                            });
