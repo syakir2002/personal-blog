@@ -136,16 +136,6 @@ No additional software installation is required.
 
 ---
 
-## Future Improvements
-
-* Dark mode support
-* More blog articles
-* Project filtering system
-* Contact form with backend integration
-* Portfolio analytics
-
----
-
 ## Author
 
 **Muhammad Syakir Mohamad Suhaimi**
