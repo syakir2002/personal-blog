@@ -91,7 +91,7 @@ portfolio/
 1. Download or clone the repository.
 
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/syakir2002/personal-blog.git
 ```
 
 2. Open the project folder.
