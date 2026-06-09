@@ -1,59 +1,155 @@
-# UniVent System 🏫✨
+# Personal Portfolio Website
 
-> **Centralized University Event Management Platform** > Developed as an official Final Year Project (FYP) for the Bachelor of Computer Science (Honours) at Universiti Sultan Zainal Abidin (UniSZA).
+## Overview
 
----
+This project is a personal portfolio website developed as part of the CSD34203 Special Topics in Software Development course. The website serves as an online portfolio to showcase personal information, technical skills, projects, and blog articles.
 
-## 📌 Project Overview
-The **UniVent System** is engineered to resolve the fragmentation, scheduling conflicts, and manual delays traditionally associated with managing university venue bookings and student organization events. 
-
-Built with a robust full-stack architecture using **PHP (CodeIgniter)** and **Bootstrap 5**, the platform provides a seamless digital interface for event organizers while introducing an automated, intelligent pipeline to ease administrative workflows.
+The portfolio is designed using HTML, CSS, and JavaScript with a responsive layout to ensure accessibility across different devices.
 
 ---
 
-## 🧠 Core Feature: Rule-Based Decision Support System (DSS)
-The defining highlight of UniVent is its backend **Decision Support System**. Instead of relying on administrators to manually review constraint criteria, the system evaluates logical rules the moment an event organizer initiates a booking request.
+## Features
 
-### 🛡️ Automated Computational Rules Pipeline:
-The backend instantly validates inputs against structural constraints using deterministic conditional logic:
+### Home Page
 
-* **Rule 1 (Venue Status Checking):** Assesses if the requested venue is under maintenance or active.
-* **Rule 2 (Capacity Filtering):** Validates if `Expected_Attendance` $\le$ `Venue_Maximum_Capacity`.
-* **Rule 3 (Temporal Conflict Resolution):** Runs date/time matrix queries to guarantee zero clashing schedules for the same location.
+* Introduction and personal profile
+* Navigation to all website sections
 
-> ⚡ **Outcome:** If all automated logic rules pass safely, the application status flags itself as `Auto-Validated; Pending Admin Approval`. This transforms the administrator’s workspace into a streamlined, one-click verification checkpoint.
+### About Page
+
+* Personal background
+* Educational information
+* Skills and interests
+
+### Projects Page
+
+* Showcase of completed software and technical projects
+* Project descriptions and technologies used
+
+### Blog Page
+
+* Collection of blog articles
+* Easy navigation between posts
+
+### Blog Posts
+
+* Blog Post 1
+* Blog Post 2
+
+### Contact Page
+
+* Contact information
+* Easy way for visitors to reach out
+
+### Additional Features
+
+* Responsive design for mobile and desktop devices
+* Custom styling using CSS
+* Interactive elements using JavaScript
 
 ---
 
-## 🛠️ Tech Stack & Architecture
-* **Backend Framework:** PHP (CodeIgniter)
-* **Frontend UI Layout:** HTML5, CSS3, JavaScript, Bootstrap 5
-* **Database Management:** MySQL (Relational Schema Design)
-* **Icons & Assets:** FontAwesome v6
+## Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript
+* Git
+* GitHub
 
 ---
 
-## 🗃️ Database Architecture (Key Tables)
-The relational system relies on structured relational database tracking to enforce transactional consistency across scheduling pipelines:
+## Project Structure
 
-| Table Name | Description | Key Fields Included |
-| :--- | :--- | :--- |
-| `users` | Stores system access controls for users | `id`, `name`, `email`, `password`, `role` *(Admin/Organizer)* |
-| `venues` | Contains physical venue capacities & parameters | `venue_id`, `venue_name`, `max_capacity`, `status` |
-| `bookings` | Tracks event pipelines and automated validation states | `booking_id`, `organizer_id`, `venue_id`, `start_time`, `end_time`, `status` |
+```text
+portfolio/
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── javascript.js
+│
+├── img_pro/
+│
+├── index.html
+├── about.html
+├── project.html
+├── blog.html
+├── blog-post-1.html
+├── blog-post-2.html
+├── contact.html
+├── README.md
+│
+└── img1.jpg
+```
 
 ---
 
-## 🖥️ System Interface Workflows
-1. **Organizer Module:** Allows authorized student bodies to submit comprehensive event applications, pick available venues, and receive instant feedback if a capacity or time conflict occurs.
-2. **Administrator Dashboard:** A control center showing system-validated approvals, allowing personnel to issue official authorization overrides instantly.
+## How to Run the Project
+
+1. Download or clone the repository.
+
+```bash
+git clone https://github.com/yourusername/portfolio.git
+```
+
+2. Open the project folder.
+
+3. Open `index.html` in any modern web browser.
+
+No additional software installation is required.
 
 ---
 
-## 🔧 Local Setup & Installation Instructions
+## Screenshots
 
-If you wish to host and audit this codebase environment locally, follow these steps:
+### Home Page
 
-1. **Clone the Repository:**
-   ```bash
-      git clone [https://github.com/yourusername/univent-system.git](https://github.com/yourusername/univent-system.git)
+Insert screenshot here.
+
+### About Page
+
+Insert screenshot here.
+
+### Projects Page
+
+Insert screenshot here.
+
+### Blog Page
+
+Insert screenshot here.
+
+### Contact Page
+
+Insert screenshot here.
+
+---
+
+## Future Improvements
+
+* Dark mode support
+* More blog articles
+* Project filtering system
+* Contact form with backend integration
+* Portfolio analytics
+
+---
+
+## Author
+
+**Muhammad Syakir Mohamad Suhaimi**
+
+Student of Faculty of Informatics and Computing (FIK)
+
+Course: CSD34203 Special Topics in Software Development
+
+---
+
+## GitHub Repository
+
+Repository Link:
+[https://yourusername.github.io/portfolio/](https://github.com/syakir2002)
+
+Demo Link (GitHub Pages):
+[https://github.dev/syakir2002/personal-blog/settings/pages](https://syakir2002.github.io/personal-blog/)
