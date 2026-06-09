@@ -120,7 +120,7 @@ No additional software installation is required.
 
 ### About Page
 
-![About_Me](readme/about.png)
+![About_Me](readme/about_me.png)
 
 ### Projects Page
 
