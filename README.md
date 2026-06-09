@@ -116,23 +116,23 @@ No additional software installation is required.
 
 ### Home Page
 
-Insert screenshot here.
+![Home Page](home.png)
 
 ### About Page
 
-Insert screenshot here.
+![About_Me](about.png)
 
 ### Projects Page
 
-Insert screenshot here.
+![project](project.png)
 
 ### Blog Page
 
-Insert screenshot here.
+![blog](blog.png)
 
 ### Contact Page
 
-Insert screenshot here.
+![contact](contact.png)
 
 ---
 
