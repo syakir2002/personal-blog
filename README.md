@@ -116,23 +116,23 @@ No additional software installation is required.
 
 ### Home Page
 
-![Home Page](home.png)
+![Home Page](readme/home.png)
 
 ### About Page
 
-![About_Me](about.png)
+![About_Me](readme/about.png)
 
 ### Projects Page
 
-![project](project.png)
+![project](readme/project.png)
 
 ### Blog Page
 
-![blog](blog.png)
+![blog](readme/blog.png)
 
 ### Contact Page
 
-![contact](contact.png)
+![contact](readme/contact.png)
 
 ---
 
