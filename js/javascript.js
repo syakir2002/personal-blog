@@ -1,97 +1,116 @@
-// Mobile Hamburger Menu Toggle Logic
-const mobileMenu = document.getElementById('mobileMenu');
-const navLinks = document.getElementById('navLinks');
+document.addEventListener('DOMContentLoaded', () => {
 
-if (mobileMenu && navLinks) {
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = mobileMenu.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-}
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-// Basic Form Submission Feedback Interception
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (themeToggle) {
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved user preference on startup
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            if (themeIcon) themeIcon.className = 'fas fa-sun';
+        }
+
+        // Toggle Event
+        themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents clicks on the internal icon from misfiring
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                if (themeIcon) themeIcon.className = 'fas fa-sun';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                if (themeIcon) themeIcon.className = 'fas fa-moon';
+            }
+        });
+    }
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Toggle hamburger icon bars smoothly to an 'X' close indicator
+            const menuIcon = mobileMenu.querySelector('i');
+            if (menuIcon) {
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
+            }
+        });
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('name');
+            const name = nameInput ? nameInput.value : 'there';
+            
+            alert(`Thank you, ${name}! Your form submitted perfectly.`);
+            contactForm.reset();
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        const targets = document.querySelectorAll('#about-me-sec, #journey-sec, #skills-sec');
+        const links = document.querySelectorAll('.sub-link');
         
-        const name = document.getElementById('name').value;
-        alert(`Thank you, ${name}! Your form submitted perfectly.`);
-        
-        contactForm.reset();
-    });
-}
+        // Skip execution if we aren't on the About page
+        if (targets.length === 0 || links.length === 0) return;
 
-// Sidebar Project Tab Switching Logic
+        let activeId = '';
+        
+        targets.forEach(target => {
+            const top = target.offsetTop;
+            const height = target.clientHeight;
+            if (window.pageYOffset >= (top - height / 3)) {
+                activeId = target.getAttribute('id');
+            }
+        });
+
+        links.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(activeId)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+});
+
 function showProject(projectId) {
-    // 1. Remove active state from all content panels
+    // Hide all project information sections
     const panels = document.querySelectorAll('.project-panel');
     panels.forEach(panel => panel.classList.remove('active'));
 
-    // 2. Remove active state from all left sidebar list items
+    // Deactivate previous sidebar items
     const menuItems = document.querySelectorAll('.menu-item');
     menuItems.forEach(item => item.classList.remove('active'));
 
-    // 3. Activate the matching project panel
+    // Activate selected project layout element
     const targetedPanel = document.getElementById(projectId);
     if (targetedPanel) {
         targetedPanel.classList.add('active');
     }
-
-    // 4. Activate the clicked sidebar menu item
-    // Finds the menu item possessing the corresponding click event argument
-    const clickedItem = event.currentTarget;
-    if (clickedItem) {
-        clickedItem.classList.add('active');
+    
+    // Highlight matching item clicked in the layout tree
+    if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('active');
     }
 }
 
-
-// Monitor page scroll position to change sidebar highlights dynamically
-window.addEventListener('scroll', () => {
-    const targets = document.querySelectorAll('#about-me-sec, #journey-sec, #skills-sec');
-    const links = document.querySelectorAll('.sub-link');
-    
-    let activeId = '';
-    
-    targets.forEach(target => {
-        const top = target.offsetTop;
-        const height = target.clientHeight;
-        if (window.pageYOffset >= (top - height / 3)) {
-            activeId = target.getAttribute('id');
-        }
-    });
-
-    links.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(activeId)) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Function 1: Handles switching between different project panels via Sidebar clicks
-function showProject(projectId) {
-    // Hide all project information sections
-    document.querySelectorAll('.project-panel').removeClassNameOrClass('active');
-    document.querySelectorAll('.project-panel').forEach(panel => panel.classList.remove('active'));
-    
-    // Deactivate previous sidebar items
-    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
-
-    // Activate selected project layout element
-    document.getElementById(projectId).classList.add('active');
-    
-    // Highlight matching click item in sidebar menu tree
-    event.currentTarget.classList.add('active');
-}
-
-// Function 2: Manages Left/Right sliding mechanics for individual screenshot lists
 function moveSlider(projectPanelId, direction) {
     const sliderContainer = document.getElementById(`slider-${projectPanelId}`);
+    if (!sliderContainer) return; // Guard clause in case slider wrapper doesn't exist
+
     const images = sliderContainer.querySelectorAll('.slider-img');
+    if (images.length === 0) return;
     
     let currentActiveIndex = 0;
 
@@ -102,17 +121,17 @@ function moveSlider(projectPanelId, direction) {
         }
     });
 
-    // Remove active markers
+    // Remove active marker from the old slide
     images[currentActiveIndex].classList.remove('active');
 
-    // Calculate next array sequence loop boundary path securely
+    // Calculate next slide index securely
     let nextActiveIndex = currentActiveIndex + direction;
     if (nextActiveIndex >= images.length) {
-        nextActiveIndex = 0; // Wrap back to the beginning
+        nextActiveIndex = 0; // Loop back to the beginning
     } else if (nextActiveIndex < 0) {
-        nextActiveIndex = images.length - 1; // Wrap back to the end
+        nextActiveIndex = images.length - 1; // Loop back to the final image
     }
 
-    // Paint visibility to the next computed item index frame target
+    // Set the new slide to active
     images[nextActiveIndex].classList.add('active');
 }

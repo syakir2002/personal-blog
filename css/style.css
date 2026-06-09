@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade switch effect */
 }
 
 /* Sections */
@@ -39,7 +40,6 @@ body {
     margin-bottom: 40px;
     position: relative;
 }
-
 .section-title::after {
     content: '';
     display: block;
@@ -58,6 +58,7 @@ body {
     background-color: var(--light-dark);
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
 }
 
 .nav-container {
@@ -80,9 +81,17 @@ body {
     color: var(--primary-color);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Spaces out your links menu cleanly from your moon toggle switch */
+}
+
 .nav-links {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li a {
@@ -101,6 +110,7 @@ body {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--light-text);
 }
 
 /* Hero Section */
@@ -110,7 +120,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(34, 40, 49, 0.85), rgba(34, 40, 49, 0.95)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    background: linear-gradient(var(--hero-overlay), var(--hero-overlay-deep)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
 }
 
 .hero-content h1 {
@@ -982,4 +992,210 @@ html {
 .slider-btn:hover {
     background-color: var(--primary-color);
     color: #fff;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 1. Define your standard "Dark" variables (Default) */
+:root {
+    --primary-color: #00adb5;
+    --dark-bg: #222831;
+    --light-dark: #393e46;
+    --light-text: #eeeeee;
+    --grey-text: #b3b3b3;
+    --hero-overlay: rgba(34, 40, 49, 0.85);
+    --hero-overlay-deep: rgba(34, 40, 49, 0.95);
+}
+
+/* 2. Define your "Light" variables (Overrides when active) */
+body.light-mode {
+    --dark-bg: #f4f6f9;         /* Light body background tone */
+    --light-dark: #ffffff;      /* Pure white container cards and navigation background */
+    --light-text: #222831;      /* Crisp dark text rendering core content labels */
+    --grey-text: #556071;       /* Accessible grey readouts for descriptions */
+    --primary-color: #008c92;   /* Deepened teal accents for high color contrast validation */
+    --hero-overlay: rgba(244, 246, 249, 0.80);
+    --hero-overlay-deep: rgba(244, 246, 249, 0.92);
+}
+
+/* Theme Toggle Trigger Button Custom Styles */
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+/* --- Fix Light Mode Project Sidebar Text visibility --- */
+body.light-mode .projects-sidebar {
+    background-color: #f8f9fa; /* Switches sidebar background to an ultra-clean light grey */
+    border-right: 1px solid #dee2e6; /* Adjusts the dividing line to match a light theme */
+}
+
+body.light-mode .menu-item {
+    color: #495057; /* Changes inactive project text to a legible dark gray */
+    border-bottom: 1px dashed #dee2e6;
+}
+
+body.light-mode .menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.04); /* Subtle dark-tint hover on light background */
+}
+
+/* Keeps the active project highlighted nicely in Light Mode */
+body.light-mode .menu-item.active {
+    background-color: #ffffff; /* Matches your active main content board background */
+    color: var(--primary-color);
+}
+
+body.light-mode .code-concept-quote {
+    background-color: #f8f9fa; /* Clean light gray box highlight */
+    color: #222831 !important; /* CRITICAL FIX: Forces text to dark gray so it is visible! */
+    border-left-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Light Mode Contact Grid Layout Fix --- */
+body.light-mode .contact-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Forces 3 columns on desktop */
+    gap: 20px !important;
+}
+
+body.light-mode .contact-square-card {
+    background-color: #ffffff !important; /* Force pristine white card backgrounds */
+    border: 1px solid #dee2e6 !important; /* Soft grey border */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 30px 15px !important;
+    text-decoration: none !important; /* Removes ugly default blue underlines */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Fix text and label colors inside the cards */
+body.light-mode .contact-square-card h3 {
+    color: #222831 !important; /* Dark bold titles */
+    margin-bottom: 8px !important;
+}
+
+body.light-mode .contact-square-card p {
+    color: #556071 !important; /* Slate grey subtitles */
+}
+
+/* Mobile responsive override fallback to keep them stacked nicely on phones */
+@media (max-width: 768px) {
+    body.light-mode .contact-cards-grid {
+        grid-template-columns: 1fr !important; /* Stacks to 1 column on mobile screen viewports */
+    }
+}
+/* --- Base Contact Grid Layout (Dark Mode Default) --- */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 side-by-side columns on desktop */
+    gap: 20px;
+    max-width: 850px;
+    margin: 40px auto 0 auto;
+    width: 100%;
+}
+
+/* Base Style for Every Square Card */
+.contact-square-card {
+    background-color: var(--light-dark); /* Automatically handles dark/light variable swaps */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 30px 15px;
+    text-align: center;
+    text-decoration: none !important; /* CRITICAL: Removes default blue link underlines */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Icons inside the cards */
+.contact-square-card i {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Titles inside the cards */
+.contact-square-card h3 {
+    color: var(--light-text); /* Automatically changes color depending on theme */
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Descriptions inside the cards */
+.contact-square-card p {
+    color: var(--grey-text);
+    font-size: 0.9rem;
+    margin: 0;
+    word-break: break-all; /* Prevents email address text overflow breakdown */
+}
+
+/* --- Hover Highlight States --- */
+.contact-square-card:hover {
+    transform: translateY(-5px);
+}
+.contact-square-card:hover i {
+    transform: scale(1.1);
+}
+
+/* Custom accent borders/shadows on hover */
+.card-email:hover { border-color: var(--primary-color); box-shadow: 0 5px 20px rgba(0, 173, 181, 0.2); }
+.card-email i { color: var(--primary-color); }
+
+.card-whatsapp:hover { border-color: #25D366; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.2); }
+.card-whatsapp i { color: #25D366; }
+
+.card-github:hover { border-color: #ffffff; box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1); }
+.card-github i { color: #fff; }
+
+/* Responsive Mobile Handling */
+@media (max-width: 768px) {
+    .contact-cards-grid {
+        grid-template-columns: 1fr; /* Stacks cards vertically on mobile viewports */
+        max-width: 340px;
+    }
+}
+
+/* --- Light Mode Contact Adjustments --- */
+body.light-mode .contact-square-card {
+    border-color: #dee2e6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+body.light-mode .card-github:hover {
+    border-color: #222831;
+    box-shadow: 0 5px 20px rgba(34, 40, 49, 0.15);
+}
+body.light-mode .card-github i { color: #222831; }
+/* Update this specific block to force the icons to render at full size */
+.contact-square-card i {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    display: inline-block; /* CRITICAL: Forces flexbox to respect the icon dimensions! */
+    width: auto;
+    height: auto;
+    transition: transform 0.3s ease;
 }

@@ -12,15 +12,23 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">Syakir<span>.</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="project.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobileMenu">
-                <i class="fas fa-bars"></i>
+            
+            <div class="nav-actions">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="menu-toggle" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </nav>
@@ -38,26 +46,28 @@
 
         <hr class="contact-divider">
 
-        <div class="contact-links-stack">
+        <div class="contact-cards-grid">
             
-            <div class="email-display-container">
-                <i class="fas fa-envelope email-icon"></i>
-                <a href="mailto:msyakirkir887@gmail.com" class="direct-email">msyakirkir887@gmail.com</a>
-            </div>
+            <a href="mailto:msyakirkir887@gmail.com" class="contact-square-card card-email">
+                <i class="fas fa-envelope card-icon"></i>
+                <h3>Email Me</h3>
+                <p>msyakirkir887@gmail.com</p>
+            </a>
             
-            <div class="whatsapp-container">
-                <a href="https://wa.me/60123456789?text=Hi%20Syakir,%20I%20saw%20your%20portfolio..." target="_blank" class="btn-contact-action btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>
-            </div>
+            <a href="https://wa.me/60123456789?text=Hi%20Syakir,%20I%20saw%20your%20portfolio..." target="_blank" class="contact-square-card card-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <p>Chat Instantly</p>
+            </a>
 
-            <div class="github-container">
-                <a href="https://github.com/syakir2002" target="_blank" class="btn-contact-action btn-github">
-                    <i class="fab fa-github"></i> View My GitHub Profile
-                </a>
-            </div>
+            <a href="https://github.com/syakir2002" target="_blank" class="contact-square-card card-github">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>View Source Code</p>
+            </a>
 
-        </div> </section>
+        </div> 
+    </section>
 
     <footer>
         <p>&copy; 2026 Syakir. All rights reserved.</p>
