@@ -12,15 +12,20 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">Syakir<span>.</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobileMenu">
-                <i class="fas fa-bars"></i>
+            
+            <div class="nav-actions">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                
+                <div class="menu-toggle" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </nav>
@@ -29,10 +34,17 @@
         <h2 class="section-title">Past Projects</h2>
         
         <div class="projects-container">
+            
             <aside class="projects-sidebar">
                 <ul class="project-menu">
                     <li class="menu-item active" onclick="showProject('univend')">
                         <span class="arrow">&raquo;</span> UniVent System
+                    </li>
+                    <li class="menu-item" onclick="showProject('rentalhouse')">
+                        <span class="arrow">&raquo;</span> Rental House System
+                    </li>
+                    <li class="menu-item" onclick="showProject('infra')">
+                        <span class="arrow">&raquo;</span> Infrastructure Monitor
                     </li>
                 </ul>
             </aside>
@@ -40,28 +52,35 @@
             <main class="projects-display">
                 
                 <div id="univend" class="project-panel active">
-                    <h3>UniVent System(On Going)</h3>
+                    <h3>UniVent System (On Going)</h3>
 
                     <p class="project-desc">
                         UniVent System is a university event management platform developed as my Final Year Project (FYP) to improve how students discover and engage with campus events. The system provides a centralized platform where students can easily browse upcoming events, view event details, and leave comments through a mobile application developed using Flutter. In addition, administrators can manage event information and monitor user interactions through a web-based system built with CodeIgniter 4 and Bootstrap 5. This project allowed me to gain experience in full-stack development, REST API integration, database management, and user interface design while creating a practical solution that enhances communication and participation within the university community.
                     </p>
 
+                    <div class="project-slider-wrapper">
+                        <div class="project-slider" id="slider-univend">
+                            <img src="img_pro/1.png" alt="UniVent Dashboard UI" class="slider-img active">
+                            <img src="img_pro/2.png" alt="UniVent Organizer Module" class="slider-img">
+                            <img src="img_pro/3.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            <img src="img_pro/4.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            <img src="img_pro/5.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            <img src="img_pro/6.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            <img src="img_pro/7.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            <img src="img_pro/8.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            <img src="img_pro/9.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            <img src="img_pro/10.png" alt="UniVent Admin Approvals Center" class="slider-img">
+                            
+                        </div>
+                        <button class="slider-btn prev" onclick="moveSlider('univend', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn next" onclick="moveSlider('univend', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+
                     <div class="project-metrics">
-                        <div class="metric">
-                            <strong>Role:</strong> Full Stack Developer
-                        </div>
-
-                        <div class="metric">
-                            <strong>Duration:</strong> 2025 - 2026
-                        </div>
-
-                        <div class="metric">
-                            <strong>Platform:</strong> Mobile & Web
-                        </div>
-
-                        <div class="metric">
-                            <strong>Team Size:</strong> 1 Person
-                        </div>
+                        <div class="metric"><strong>Role:</strong> Full Stack Developer</div>
+                        <div class="metric"><strong>Duration:</strong> 2025 - 2026</div>
+                        <div class="metric"><strong>Platform:</strong> Mobile & Web</div>
+                        <div class="metric"><strong>Team Size:</strong> 1 Person</div>
                     </div>
 
                     <div class="tags">
@@ -74,7 +93,6 @@
                     </div>
                 </div>
 
-                
                 <div id="rentalhouse" class="project-panel">
                     <h3>Rental House System</h3>
 
@@ -82,26 +100,21 @@
                         Rental House System is a web-based property management platform developed to simplify the process of managing rental houses for both property owners and tenants. The system enables users to browse available rental properties, view detailed house information, and submit rental inquiries through a user-friendly interface. Property owners can manage property listings, update rental information, and monitor tenant requests efficiently through an administrative dashboard. Developed using CodeIgniter 4, Bootstrap 5, and MySQL, this project enhanced my skills in full-stack web development, database management, user authentication, and responsive user interface design while providing a practical solution for rental property management.
                     </p>
 
+                    <div class="project-slider-wrapper">
+                        <div class="project-slider" id="slider-rentalhouse">
+                            <img src="images/rental1.png" alt="Property Listings Grid Grid UI" class="slider-img active">
+                            <img src="images/rental2.png" alt="Tenant Dashboard Administrative Screen" class="slider-img">
+                        </div>
+                        <button class="slider-btn prev" onclick="moveSlider('rentalhouse', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn next" onclick="moveSlider('rentalhouse', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+
                     <div class="project-metrics">
-                        <div class="metric">
-                            <strong>Role:</strong> Full Stack Developer
-                        </div>
-
-                        <div class="metric">
-                            <strong>Duration:</strong> 2025
-                        </div>
-
-                        <div class="metric">
-                            <strong>Platform:</strong> Web Application
-                        </div>
-
-                        <div class="metric">
-                            <strong>Team Size:</strong> 1 Person
-                        </div>
-
-                        <div class="metric">
-                            <strong>Status:</strong> Completed
-                        </div>
+                        <div class="metric"><strong>Role:</strong> Full Stack Developer</div>
+                        <div class="metric"><strong>Duration:</strong> 2025</div>
+                        <div class="metric"><strong>Platform:</strong> Web Application</div>
+                        <div class="metric"><strong>Team Size:</strong> 1 Person</div>
+                        <div class="metric"><strong>Status:</strong> Completed</div>
                     </div>
 
                     <div class="tags">
@@ -121,26 +134,21 @@
                         Infrastructure Monitor is a system monitoring project designed to track server performance and detect potential resource issues in real time. The project utilizes Prometheus for metrics collection and Grafana for data visualization, enabling administrators to monitor CPU usage, memory consumption, and overall system health through interactive dashboards. To evaluate monitoring effectiveness, CPU and memory stress tests were performed under different workload conditions, while automated email alerts were configured to notify administrators whenever predefined resource thresholds were exceeded. This project enhanced my understanding of Linux system administration, performance monitoring, alert management, and infrastructure reliability.
                     </p>
 
+                    <div class="project-slider-wrapper">
+                        <div class="project-slider" id="slider-infra">
+                            <img src="images/infra1.png" alt="Grafana Performance Metrics Live Tracking" class="slider-img active">
+                            <img src="images/infra2.png" alt="Prometheus Backend Metrics Console Query" class="slider-img">
+                        </div>
+                        <button class="slider-btn prev" onclick="moveSlider('infra', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn next" onclick="moveSlider('infra', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+
                     <div class="project-metrics">
-                        <div class="metric">
-                            <strong>Role:</strong> System Administrator
-                        </div>
-
-                        <div class="metric">
-                            <strong>Duration:</strong> 2025
-                        </div>
-
-                        <div class="metric">
-                            <strong>Platform:</strong> Linux Server
-                        </div>
-
-                        <div class="metric">
-                            <strong>Team Size:</strong> 1 Person
-                        </div>
-
-                        <div class="metric">
-                            <strong>Status:</strong> Completed
-                        </div>
+                        <div class="metric"><strong>Role:</strong> System Administrator</div>
+                        <div class="metric"><strong>Duration:</strong> 2025</div>
+                        <div class="metric"><strong>Platform:</strong> Linux Server</div>
+                        <div class="metric"><strong>Team Size:</strong> 1 Person</div>
+                        <div class="metric"><strong>Status:</strong> Completed</div>
                     </div>
 
                     <div class="tags">

@@ -72,3 +72,47 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Function 1: Handles switching between different project panels via Sidebar clicks
+function showProject(projectId) {
+    // Hide all project information sections
+    document.querySelectorAll('.project-panel').removeClassNameOrClass('active');
+    document.querySelectorAll('.project-panel').forEach(panel => panel.classList.remove('active'));
+    
+    // Deactivate previous sidebar items
+    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+
+    // Activate selected project layout element
+    document.getElementById(projectId).classList.add('active');
+    
+    // Highlight matching click item in sidebar menu tree
+    event.currentTarget.classList.add('active');
+}
+
+// Function 2: Manages Left/Right sliding mechanics for individual screenshot lists
+function moveSlider(projectPanelId, direction) {
+    const sliderContainer = document.getElementById(`slider-${projectPanelId}`);
+    const images = sliderContainer.querySelectorAll('.slider-img');
+    
+    let currentActiveIndex = 0;
+
+    // Find out which screenshot is currently showing inside the block
+    images.forEach((img, index) => {
+        if (img.classList.contains('active')) {
+            currentActiveIndex = index;
+        }
+    });
+
+    // Remove active markers
+    images[currentActiveIndex].classList.remove('active');
+
+    // Calculate next array sequence loop boundary path securely
+    let nextActiveIndex = currentActiveIndex + direction;
+    if (nextActiveIndex >= images.length) {
+        nextActiveIndex = 0; // Wrap back to the beginning
+    } else if (nextActiveIndex < 0) {
+        nextActiveIndex = images.length - 1; // Wrap back to the end
+    }
+
+    // Paint visibility to the next computed item index frame target
+    images[nextActiveIndex].classList.add('active');
+}
